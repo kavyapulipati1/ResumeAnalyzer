@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 min-h-screen flex items-center justify-center font-sans">
+    <div class="w-full max-w-4xl bg-white p-10 rounded-2xl shadow-2xl border border-gray-300 mt-10 mb-10">
+        
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-4">
+            📄 AI Resume Analyzer
+        </h1>
+        <p class="text-center text-gray-600 mb-8">
+            Upload your resume and paste a job description for a detailed AI-based match score.
+        </p>
+
+        <!-- Form Section -->
+        <form action="/analyze" method="post" enctype="multipart/form-data" class="space-y-6">
+            <div>
+                <label class="block text-lg font-semibold text-gray-800 mb-1">Upload Resume (PDF)</label>
+                <input type="file" name="resume" accept=".pdf"
+                       class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 outline-none"
+                       required>
+            </div>
+
+            <div>
+                <label class="block text-lg font-semibold text-gray-800 mb-1">Paste Job Description</label>
+                <textarea name="job_description" rows="6"
+                          class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 outline-none"
+                          placeholder="Paste job description here..."
+                          required></textarea>
+            </div>
+
+            <button type="submit"
+                    class="bg-indigo-600 hover:bg-indigo-700 w-full py-3 rounded-lg text-white font-semibold text-lg transition duration-200 shadow-md">
+                Analyze Resume
+            </button>
+        </form>
+
+        <!-- Info Section -->
+        <div class="mt-10 bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner">
+            <h2 class="text-xl font-semibold text-gray-800 mb-3">🔍 About the AI Model</h2>
+            <p class="text-gray-700 text-sm leading-relaxed">
+                Our AI-powered resume analyzer uses advanced semantic similarity models to evaluate
+                how closely your resume aligns with the target job role based on meaning and skills.
+            </p>
+            <ul class="list-disc mt-4 ml-5 text-gray-700 text-sm space-y-1">
+                <li>Understands context beyond keywords</li>
+                <li>Identifies job-related skills in your resume</li>
+                <li>Generates a clear match score with suggestions</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
